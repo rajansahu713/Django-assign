@@ -68,9 +68,71 @@ The development server will start running locally at http://localhost:8000/.
 Open a web browser and visit http://localhost:8000/ to view the project.
 
 
+## This repository create for Userprofile creating and updating and it contains 3 rest APIS
+
+* To get Token for user authorization 
+```python
+import requests
+import json
+
+url = "http://127.0.0.1:8000/api-token-auth/"
+
+payload = json.dumps({
+  "username": "admin123",
+  "password": "Qwaszx12@"
+})
+headers = {
+  'Authorization': '"Token": "e592fe5f6b2957894ccc36ff812d61e945d3bd57"',
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+* We will hit user_profile api to create a new required with authorization token 
+
+```python 
+import requests
+
+url = "http://127.0.0.1:8000/profile/user_profile/"
+
+payload = {
+    'name': 'suman',
+    'email': 'test@test.com',
+    'bio': 'I am sonal'}
+    files=[
+    ('picture',('3.png',open('/C:/Users/Rajansahu/Pictures/3.png','rb'),'image/png'))
+]
+headers = {
+  'Authorization': 'Token e592fe5f6b2957894ccc36ff812d61e945d3bd57'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+print(response.text)
+```
+
+* This endpoint is using to update the records of userproject data(if neccesary) 
+```python
+import requests
+
+url = "http://127.0.0.1:8000/profile/user_profile/?id=5"
+
+payload = {}
+headers = {
+  'Authorization': 'Token e592fe5f6b2957894ccc36ff812d61e945d3bd57'
+}
+
+response = requests.request("PATCH", url, headers=headers, data=payload)
+
+print(response.text)
+```
+
+
 
 # Additional Resources
-
-* Django Documentation
-* Django Project Website
-* Django GitHub Repository
+- [Django Documentation](https://docs.djangoproject.com/)
+- [Django Project Website](https://www.djangoproject.com/)
+- [Django GitHub Repository](https://github.com/django/django)
