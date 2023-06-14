@@ -14,6 +14,11 @@ git clone <repository_url>
 ```
 Alternatively, you can download the project source code as a ZIP file and extract it.
 
+And create .env file with the following contents as mentioned below:
+```
+DEBUG=True
+DJANGO_SECRET_KEY=django-insecure-#z9ho$ky
+```
 2. Create a virtual environment for the project:
 ```python
 python3 -m venv env
@@ -37,6 +42,11 @@ pip install -r requirements.txt
 This command will install all the required packages specified in the requirements.txt file.
 
 5. Perform initial database migrations:
+
+```python
+python manage.py makemigrations
+```
+And then to run to reflect all the changes in the databases
 ```python
 python manage.py migrate
 ```
