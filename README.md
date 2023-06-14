@@ -1,3 +1,5 @@
+<h1> UserProfile creatation and updatation sample project</h1>
+
 ## Prerequisites
 Before setting up a Django project, ensure that you have the following prerequisites installed:
 
@@ -66,9 +68,11 @@ python manage.py runserver
 The development server will start running locally at http://localhost:8000/.
 
 Open a web browser and visit http://localhost:8000/ to view the project.
+<br>
+<br>
+<hr>
 
-
-## This repository create for Userprofile creating and updating and it contains 3 rest APIS
+### This repository contains three APIs as mentioned below
 
 * To get Token for user authorization 
 ```python
